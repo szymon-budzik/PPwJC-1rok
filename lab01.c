@@ -1,5 +1,5 @@
 #include <stdio.h>
-//Szymon Budzik 
+//Szymon Budzik lab01
 
 //Voidy dla kazdego zadania
 void zadanie1();
