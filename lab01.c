@@ -1,125 +1,176 @@
 #include <stdio.h>
-//Szymon Budzik
-int main() {
-    int numerZadania;
+//Szymon Budzik 
 
-    do
-    {
-        printf("\nDostepne zadania:\n");
-        printf("Zadanie 1\n");
-        printf("Zadanie 2\n");
-        printf("Zadanie 3\n");
-        printf("Zadanie 4\n");
-        printf("Zadanie 5\n");
+//Voidy dla kazdego zadania
+void zadanie1();
+void zadanie2();
+void zadanie3();
+void zadanie4();
+void zadanie5();
 
-        printf("Wybierz numer zadania (0 aby zakonczyc):\n");
-        scanf_s("%d", &numerZadania);
+int main()
+{
+	int numerZadania;
 
-        if (numerZadania == 1)
-        {
-            printf("\n131359\n");
-        }
-        else if (numerZadania == 2)
-        {
-            int liczba;
-            printf("\nPodaj liczbe calkowita: ");
-            scanf_s("%d", &liczba);
+	do
+	{
 
-            if (liczba % 2 == 0) {
-                printf("%d jest liczba parzysta.\n", liczba);
-            }
-            else {
-                printf("%d nie jest liczba parzysta.\n", liczba);
-            }
-        }
-        else if (numerZadania == 3)
-        {
-            double liczba1, liczba2;
+		//Wprowadzenie numeru zadania przez użytkownika
+		printf("\n\nWybierz numer zadania (1-5) lub (0) aby zakonczyc program: ");
+		scanf_s("%d", &numerZadania);
 
-            printf("\nPodaj pierwsza liczbe zmiennoprzecinkowa: ");
-            scanf_s("%lf", &liczba1);
+		//Switch z wyborem odpowiedniego zadania
+		switch (numerZadania)
+		{
+		case 1:
+			zadanie1();
+			break;
 
-            printf("Podaj druga liczbe zmiennoprzecinkowa: ");
-            scanf_s("%lf", &liczba2);
+		case 2:
+			zadanie2();
+			break;
 
-            if (liczba1 > liczba2) {
-                printf("%.2lf jest wieksza od %.2lf.\n", liczba1, liczba2);
-            }
-            else if (liczba2 > liczba1) {
-                printf("%.2lf jest wieksza od %.2lf.\n", liczba2, liczba1);
-            }
-            else {
-                printf("Obie liczby sa rowne.\n");
-            }
-        }
-        else if (numerZadania == 4)
-        {
-            double liczba1, liczba2, liczba3, liczba4;
-            double srednia;
+		case 3:
+			zadanie3();
+			break;
 
-            printf("\nPodaj pierwsza liczbe zmiennoprzecinkowa: ");
-            scanf_s("%lf", &liczba1);
+		case 4:
+			zadanie4();
+			break;
 
-            printf("Podaj druga liczbe zmiennoprzecinkowa: ");
-            scanf_s("%lf", &liczba2);
+		case 5:
+			zadanie5();
 
-            printf("Podaj trzecia liczbe zmiennoprzecinkowa: ");
-            scanf_s("%lf", &liczba3);
+		case 0:
+			printf("Zakonczono program");
+			break;
 
-            printf("Podaj czwarta liczbe zmiennoprzecinkowa: ");
-            scanf_s("%lf", &liczba4);
+		default:
+			printf("Nieprawidlowy numer zadania \n");
+			break;
+		}
 
-            srednia = (liczba1 + liczba2 + liczba3 + liczba4) / 4.0;
+	} while (numerZadania != 0);
+}
 
-            printf("Srednia arytmetyczna z podanych liczb wynosi: %.2lf\n", srednia);
-        }
-        else if (numerZadania == 5)
-        {
-            char operacja;
-            double liczba1, liczba2, wynik;
+//Definicje funkcji dla każdego zadania
 
-            printf("\nPodaj operacje (+, -, *, /): ");
-            scanf_s(" %c", &operacja);
+void zadanie1()
+//Kod dla zadania 1
+{
+	printf("\nZadanie 1:\n");
+	
+	printf("Nr albumu to: 131359");
+}
 
-            printf("Podaj pierwsza liczbe: ");
-            scanf_s("%lf", &liczba1);
+void zadanie2()
+//Kod dla zadania 2
+{
+	printf("\nZadanie 2:\n");
 
-            printf("Podaj druga liczbe: ");
-            scanf_s("%lf", &liczba2);
+	int liczba;
 
-            switch (operacja) {
-            case '+':
-                wynik = liczba1 + liczba2;
-                printf("Wynik: %.2lf\n", wynik);
-                break;
-            case '-':
-                wynik = liczba1 - liczba2;
-                printf("Wynik: %.2lf\n", wynik);
-                break;
-            case '*':
-                wynik = liczba1 * liczba2;
-                printf("Wynik: %.2lf\n", wynik);
-                break;
-            case '/':
-                if (liczba2 != 0) {
-                    wynik = liczba1 / liczba2;
-                    printf("Wynik: %.2lf\n", wynik);
-                }
-                else {
-                    printf("Blad: Dzielenie przez zero.\n");
-                }
-                break;
-            default:
-                printf("Blad: Nieprawidlowa operacja.\n");
-            }
-        }
-        else if (numerZadania == 0) {
-            printf("\nKoniec programu.\n");
-            break;
-        }
-        else {
-            printf("Bledny numer zadania. Wybierz numer od 1 do 5.\n");
-        }
+	printf("Podaj liczbe calkowita: ");
+	scanf_s("%d", &liczba);
 
-    } while (1);
+	if (liczba % 2 == 0)
+	{
+		printf("%d jest liczba parzysta", liczba);
+	}
+	else
+	{
+		printf("%d jest liczba nieparzysta", liczba);
+	}
+}
+
+void zadanie3()
+//Kod dla zadania 3
+{
+	printf("\nZadanie 3:\n");
+
+	double liczba1, liczba2;
+
+	printf("Podaj pierwsza liczbe: \n");
+	scanf_s("%lf", &liczba1);
+	printf("Podaj druga liczbe: \n");
+	scanf_s("%lf", &liczba2);
+
+	if (liczba1 > liczba2)
+	{
+		printf("%lf jest wieksza od %lf", liczba1, liczba2);
+	}
+	else if (liczba2 > liczba1)
+	{
+		printf("%lf jest wieksza od %lf", liczba2, liczba1);
+	}
+	else
+	{
+		printf("Obie liczby sa sobie rowne");
+	}
+}
+
+void zadanie4()
+//Kod dla zadania 4
+{
+	printf("\nZadanie 4:\n");
+
+	double liczba1, liczba2, liczba3, liczba4;
+	double srednia;
+
+	printf("Podaj pierwsza liczbe: \n");
+	scanf_s("%lf", &liczba1);
+	printf("Podaj druga liczbe: \n");
+	scanf_s("%lf", &liczba2);
+	printf("Podaj trzecia liczbe: \n");
+	scanf_s("%lf", &liczba3);
+	printf("Podaj czwarta liczbe: \n");
+	scanf_s("%lf", &liczba4);
+
+	srednia = (liczba1 + liczba2 + liczba3 + liczba4) / 4;
+	printf("Srednia podanych liczb wynosi %lf", srednia);
+}
+
+void zadanie5()
+//Kod dla zadania 5
+{
+	printf("\nZadanie 5:\n");
+
+	char operacja;
+	double liczba1, liczba2;
+	double wynik;
+
+	printf("Podaj operacje ktora chcesz wykonac (+,-,*,/)\n");
+
+	scanf_s(" %c", &operacja);
+
+	printf("Podaj pierwsza liczbe: \n");
+	scanf_s("%lf", &liczba1);
+	printf("Podaj druga liczbe: \n");
+	scanf_s("%lf", &liczba2);
+
+	switch (operacja)
+	{
+	case '+':
+		wynik = liczba1 + liczba2;
+		printf("Wynik to %lf", wynik);
+		break;
+
+	case '-':
+		wynik = liczba1 - liczba2;
+		printf("Wynik to %lf", wynik);
+		break;
+
+	case '*':
+		wynik = liczba1 * liczba2;
+		printf("Wynik to %lf", wynik);
+		break;
+
+	case '/':
+		wynik = liczba1 / liczba2;
+		printf("Wynik to %lf", wynik);
+		break;
+
+	default:
+		printf("Wprowadzono nieprawidlowa operacje\n");
+	}
 }
