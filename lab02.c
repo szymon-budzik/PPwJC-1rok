@@ -69,8 +69,8 @@ void zadanie1()
 	float srednia = -1;
 	float wartoscMax = 0;
 
-	//Je¿eli chcemy ¿eby zalicza³o wartoœæ ujemn¹ do wyniku,
-	// wystarczy daæ scanf na sam pocz¹tek pêtli
+	//JeÅ¼eli chcemy Å¼eby zaliczaÅ‚o wartoÅ›Ä‡ ujemnÄ… do wyniku,
+	// wystarczy daÄ‡ scanf na sam poczÄ…tek pÄ™tli
 	while (liczba >= 0)
 	{
 		suma += liczba;
@@ -125,7 +125,7 @@ void zadanie3()
 {
 	printf("\nZadanie 3:\n");
 
-	//must need ¿eby mieæ losowe liczby
+	//must need Å¼eby mieÄ‡ losowe liczby
 	srand(time(NULL));
 
 	int sumaParzystych = 0;
