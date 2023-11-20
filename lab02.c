@@ -41,12 +41,15 @@ int main()
 
 		case 5:
 			zadanie5();
+			break;
 
 		case 6:
 			zadanie6();
+			break;
 
 		case 7:
 			zadanie7();
+			break;
 
 		case 0:
 			printf("Zakonczono program");
@@ -238,6 +241,75 @@ void zadanie6()
 void zadanie7()
 {
 	printf("\nZadanie 7:\n");
-
-
+	
+	int i, j, n;
+	// pierwszy trójkąt
+	for (i = 0; i < 10; i++)
+	{
+		for (j = 0; j <= i; j++)
+		{
+			printf("X");
+		}
+		printf("\n");
+	}
+	printf("--------------------");
+	printf("\n");
+	//drugi trójkąt
+	for (i = 0; i < 10; i++)
+	{
+		for (j = 10; j > i; j--)
+		{
+			printf("X");
+		}
+			printf("\n");
+	}
+	printf("--------------------");
+	printf("\n");
+	//trzeci trójkąt
+	for (i = 0; i < 10; i++)
+	{
+		for (j = 9; j > i; j--)
+		{
+			printf(" ");
+		}
+		for (n = 0; n <= i; n++)
+		{
+			printf("X");
+		}
+		printf("\n");
+	}
+	printf("--------------------");
+	printf("\n");
+	//czwarty trójkąt
+	for (i = 0; i < 10; i++)
+	{
+		for (n = 0; n < i; n++)
+		{
+			printf(" ");
+		}
+		for (j = 10; j > i; j--)
+		{
+			printf("X");
+		}
+		printf("\n");
+	}
+	printf("--------------------");
+	printf("\n");
+	//piąty trójkąt
+	for (i = 0; i < 10; i++)
+	{
+		for (j = 9; j > i; j--)
+		{
+			printf(" ");
+		}
+		for (n = 0; n <= i; n++)
+		{
+			printf("X");
+		}
+		for (j = 0; j <= i; j++)
+		{
+			printf("X");
+		}
+		printf("\n");
+	}
 }
