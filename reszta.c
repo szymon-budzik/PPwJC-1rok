@@ -30,49 +30,49 @@ int main()
 
 	while (reszta > 0)
 	{
-		if (5 < reszta)
+		if (5 <= reszta)
 		{
 			printf("%.1f ", z5);
 			reszta = reszta - z5;
 		}
 
-		else if (2 < reszta)
+		else if (2 <= reszta)
 		{
 			printf("%.1f ", z2);
 			reszta = reszta - z2;
 		}
 
-		else if (1 < reszta)
+		else if (1 <= reszta)
 		{
 			printf("%.1f ", z1);
 			reszta = reszta - z1;
 		}
 
-		else if (0.5 < reszta)
+		else if (0.5 <= reszta)
 		{
 			printf("%.1f ", gr50);
 			reszta = reszta - gr50;
 		}
 
-		else if (0.2 < reszta)
+		else if (0.2 <= reszta)
 		{
 			printf("%.1f ", gr20);
 			reszta = reszta - gr20;
 		}
 
-		else if (0.1 < reszta)
+		else if (0.1 <= reszta)
 		{
 			printf("%.1f ", gr10);
 			reszta = reszta - gr10;
 		}
 
-		else if (0.05 < reszta)
+		else if (0.05 <= reszta)
 		{
 			printf("%.2f ", gr5);
 			reszta = reszta - gr5;
 		}
 
-		else if (0.02 < reszta)
+		else if (0.02 <= reszta)
 		{
 			printf("%.2f ", gr2);
 			reszta = reszta - gr2;
