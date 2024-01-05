@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+void extraction();
+
+int main() {
+    int aNumber; // pierwsza liczba (a)
+    int bNumber; // druga liczba (b)
+    int mNumber; // wartosc mnozenia liczby a i b
+    
+    // zmienne zachowujace ilosc cyfr w liczbie
+    int aLenght = 1;
+    int bLenght = 1; 
+    int mLenght = 1; 
+
+    int temp; // zmienna "tymaczsowa/pomocnicza"
+
+    printf("Podaj pierwsza liczbe: ");
+    scanf_s("%d", &aNumber);
+    printf("Podaj druga liczbe: ");
+    scanf_s("%d", &bNumber);
+
+    mNumber = aNumber * bNumber;
+    
+    // sprawdzanie dlugosci aNumber
+    while (aNumber >= pow(10, aLenght)) {
+        aLenght++;
+    }
+
+    // sprawdzanie dlugosci bNumber
+    while (bNumber >= pow(10, bLenght)) {
+        bLenght++;
+    }
+    
+    // sprawdzanie dlugosci mNumber
+    while (mNumber >= pow(10, mLenght)) {
+        mLenght++;
+    }
+
+    // zamienianie dwoch wejsciowych liczb miejscami,
+    // jezeli bNumber jest dluzsze od aNumber 
+    if (bLenght > aLenght) {
+        temp = aNumber;
+        aNumber = bNumber;
+        bNumber = temp;
+        //zamiana dlugosci
+        temp = aLenght;
+        aLenght = bLenght;
+        bLenght = temp;
+    }
+
+    //tworzenie dynamicznych tablic ktore jako rozmiar
+    //przyjmuja dlugosci liczb (a,b,m)
+    int* aTab = (int*)malloc(aLenght * sizeof(int));
+    int* bTab = (int*)malloc(bLenght * sizeof(int));
+    int* mTab = (int*)malloc(mLenght * sizeof(int));
+
+    if (aTab == NULL || bTab == NULL || mTab ==NULL) {
+        printf("Nie udalo sie zaalokowac pamieci.\n");
+        return 1; // zakonczenie programu w przypadku bledu
+    } 
+
+    //wywolanie funkcji zeby wypelnic aTab i bTab
+    //pojedynczymi cyframi w odpowiedniej kolejnosci
+    extraction(aNumber, aTab, aLenght);
+    extraction(bNumber, bTab, bLenght);
+
+
+ 
+
+
+
+
+
+
+    free(aTab);
+    free(bTab);
+    free(mTab);
+}
+
+//funkcja "wyjmuje" pojedyncze cyfry z liczby np. (123 to 1,2,3)
+// i umieszcza je w odpowiednich tablicach
+void extraction(int number, int* tab, int length) {
+    for (int i = length - 1; i >= 0; i--) {
+        tab[i] = number % 10;
+        number /= 10;
+    }
+}
