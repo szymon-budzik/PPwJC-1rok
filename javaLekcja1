@@ -1,0 +1,41 @@
+public class Main {
+    public static void main(String[] args) {
+        //pierwszy program testowy uczymy się pracować ze zmiennymi różnych typów
+        System.out.println("Hello world!");
+        System.out.println("Szymon Budzik");
+        int xxx; //bez inicjalizacji
+        int x = 5; //deklaracja z inicjalizacją zmiennej całkowitej
+        System.out.println(x);
+        System.out.println("x");
+        char zmienna_znakowa = 'g';
+        System.out.println(zmienna_znakowa);
+        float typ_zmiennoprzecinkowy = 2.5f;
+        System.out.println(typ_zmiennoprzecinkowy);
+        byte zmienna_calkowita = 22;
+        System.out.println(zmienna_calkowita);
+        short zmienna_calkowita2 = 33;
+        System.out.println(zmienna_calkowita2);
+        double zmienna_zmiennoprzecinkowa = 3.3;
+        System.out.println(zmienna_zmiennoprzecinkowa);
+        long zmienna = x * x;
+        System.out.println(zmienna);
+        boolean zmienna_logiczna = true;
+        System.out.println(zmienna_logiczna);
+        System.out.println(!zmienna_logiczna);
+
+        String a = "Typ łańcuchowy";
+        System.out.println(a);
+        System.out.println("dlugosc napisu przechowywanego w zmiennej a to " + a.length());
+
+        int num = 10;
+
+        for (int xy = 0; xy < a.length(); xy++) {
+            System.out.println(xy);
+        }
+
+        for (int xy = 0; xy < num; xy++) {  // x++ to x=x+1
+            System.out.print(xy + " ");
+            System.out.println(xy * xy);
+        }
+    }
+}
