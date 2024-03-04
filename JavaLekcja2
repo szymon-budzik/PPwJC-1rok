@@ -1,0 +1,99 @@
+package org.example;
+
+public class Main {
+    public static void main(String[] args) {
+        int wiek = 17;
+        if (wiek >= 18) {
+            System.out.println("Osoba jest pelnoletnia");
+        } else {
+            System.out.println("Osoba nie jest pelnoletnia");
+            System.out.println("Osoba ma " + wiek + " lat");
+            System.out.println("Osobie brakuje do pelnoletnosci " + (18 - wiek));
+        }
+
+        System.out.println("Osoba " + (wiek >= 18 ? "" : "nie") + "jest pelnoletnia");
+
+        switch (wiek % 2) {
+            case 0:
+                System.out.println(wiek + " jest liczbą parzystą");
+                break;
+            case 1:
+                System.out.println(wiek + " jest liczbą nieparzystą");
+                break;
+            default:
+                System.out.println("nieprzewidziana sytuacja");
+        }
+
+        String zmiennaS = "Nie wiem";
+        switch (zmiennaS) {
+            case "Nie wiem":
+                System.out.println(zmiennaS + " czy wszyscy zdadza ten semestr");
+                break;
+            case "Moze":
+                System.out.println(zmiennaS + " sie uda");
+                break;
+            default:
+                System.out.println("Albo nie");
+        }
+
+        int i = 0;
+        System.out.println("Dzialanie petli while");
+        while (i <= 10) {
+            System.out.println(i++);
+        }
+
+        System.out.println("Dzialanie petli for");
+        for (int k = 1; k <= 11; k++)
+            System.out.println(k);
+
+        System.out.println("Dzialanie petli do while");
+        long j = 1;
+        do {
+            System.out.println(j++ + " ");
+        } while (j <= 11);
+
+        boolean zmienna_log = false;
+
+        while (zmienna_log) {
+            System.out.println("Zawartosc petli WHILE");
+        }
+        do {
+            System.out.println("Zawartosc petli Do-WHILE");
+        } while (zmienna_log);
+
+        System.out.println("Tablice");
+        int[] vector = new int[3];
+        int[] preinitializedVector = new int[]{1, 2, 3, 4};
+        int[][] twoDimMatrix = new int[][]{{1, 2, 3}, {4, 5, 6}};
+        String[] arrayName = {"Ala", "Ela", "Ula", "Ola"};
+
+        vector[0] = 2;
+        for (String arrayElem : arrayName) {
+            System.out.print(arrayElem + " ");
+        }
+
+        System.out.println();
+        System.out.println("Wypisanie wartosci z tablicy dwuwymiarowej");
+        for (int wiersze = 0; wiersze < twoDimMatrix.length; wiersze++) {
+            for (int kolumny = 0; kolumny < twoDimMatrix[0].length; kolumny++) {
+                System.out.print(twoDimMatrix[wiersze][kolumny] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        for (int[] caly_wiersz : twoDimMatrix) {
+            for (int wart_calkowita : caly_wiersz) {
+                System.out.print(wart_calkowita + " ");
+            }
+            System.out.println();
+        }
+
+        int ii = 1;
+        for (int h = 0; h < 2; h++) {
+            System.out.println(ii);
+            if (ii % 2 == 1)
+                break;
+            ii++;
+        }
+    }
+}
